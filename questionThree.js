@@ -13,12 +13,12 @@ Example: for amount=4 (4¢) and denominations=[1,2,3] (1¢, 2¢ and 3¢), your p
 
 function getWays(n, coins) {
     let ways = new Array(n + 1).fill(0)
-    ways[0] = 1;
-    coins.forEach(function (coin) {
-        for (var i = coin; i <= n; i++) {
-            var rem = i - coin;
-            ways[i] += ways[rem];
+    ways[0] = 1
+    coins.forEach(coin => {
+        for (let i = coin; i <= n; i++) {
+            let rem = i - coin
+            ways[i] += ways[rem]
         }
     });
-    return ways[n];
+    return ways[n]
 }
